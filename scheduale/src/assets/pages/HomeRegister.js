@@ -30,7 +30,7 @@ function Home() {
     e.preventDefault();
     try {
       const res = await axios
-        .post("http://localhost:8000/register", { user, slots })
+        .post("http://localhost:8000/api/register", { user, slots })
         .then((res) => res.data);
       navigate("/");
       console.log(res);

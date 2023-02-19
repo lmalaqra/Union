@@ -12,17 +12,18 @@ const slotRoutes = require("./src/routes/slot");
 
 const app = express();
 const path = require("path");
-app.use(express.static("build "));
+app.use(express.static("scheduale/build"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/register", studentRoutes);
-app.use("/slot", slotRoutes);
+app.use("/api/register", studentRoutes);
+app.use("/api/slot", slotRoutes);
 app.get("/*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build ", "index.html"));
+  res.sendFile(path.resolve(__dirname, "scheduale", "build", "index.html"));
 });
+
 // app.use(cookieParser());
 
 module.exports = app;
