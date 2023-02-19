@@ -17,7 +17,6 @@ app.use(express.static("scheduale/build"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-
 app.use("/api/register", studentRoutes);
 app.use("/api/slot", slotRoutes);
 app.get("/*", (req, res) => {
